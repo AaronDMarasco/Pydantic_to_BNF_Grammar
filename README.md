@@ -28,7 +28,7 @@ pip install -r requirements.txt
 ​
 To run the application:
 ```bash
-streamlit run app.py --server.headless true
+streamlit run app.py --server.headless true --browser.gatherUsageStats false
 ```
 The application will start and you can access it via your web browser http://localhost:8501
 
