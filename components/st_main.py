@@ -82,8 +82,9 @@ class SafetyFeature(BaseModel):
 
 class PerformanceFeature(BaseModel):
   engine: str
-  horsepower: int
- 
+  horsepower: int | None
+  EV: bool | None
+
 class Features(BaseModel):
   audio: AudioFeature
   safety: SafetyFeature
@@ -91,7 +92,7 @@ class Features(BaseModel):
 
 class Car(BaseModel):
   model: str
-  year: int
+  year: int | float
   colors: list[str]
   features: Features
 
