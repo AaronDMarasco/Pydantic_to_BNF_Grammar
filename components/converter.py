@@ -119,7 +119,7 @@ def pydantic_model_to_bnf(model_cls, root=True):
         model_rules.append(f"[ {rule} ws ',' ] " if optional else f"{rule} ws ',' ")
 
     if model_rules:
-        # Need to remove the last whitespace+comme but it may be inside a bracket if it was optional. Not very pythonic, but JSON's rules not ours.
+        # Need to remove the last whitespace+comma but it may be inside a bracket if it was optional. Not very pythonic, but JSON's rules not ours.
         bad_trailing = " ws ','"
         last_loc = model_rules[-1].rindex(bad_trailing)
         model_rules[-1] = model_rules[-1][:last_loc] + model_rules[-1][last_loc+len(bad_trailing):]
